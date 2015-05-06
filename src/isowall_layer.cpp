@@ -52,6 +52,25 @@ IsowallLayer::draw()
 
       if (tilemap[width * i + j])
       {
+        if (true)
+        {
+          float dist = sqrt((i - height/2)*(i - height/2)
+                            + (j - width/2)*(j - width/2));
+          //dist += lheight;
+          dist /= 12.0f;
+          if (dist > 1.0f)
+            dist = 1.0f;
+
+          horz.set_color(1.0f-dist,
+                         1.0f-dist,
+                         1.0f-dist,
+                         1.0f);
+          vert.set_color(1.0f-dist,
+                         1.0f-dist,
+                         1.0f-dist,
+                         1.0f);
+        }
+
         if (j % 2)
           horz.draw(x + 320 + 32, y - horz.get_height() + 100 - 16);
         else if (i < height-1)

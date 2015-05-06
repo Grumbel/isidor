@@ -72,19 +72,19 @@ IsotileLayer::draw(int lheight)
       {
         CL_Surface& surf = tiles[tilemap[width * i + j]];
 
-        if (0)
+        if (true)
         {
           float dist = sqrt((i - height/2)*(i - height/2)
                             + (j - width/2)*(j - width/2));
           dist += lheight;
-          dist /= 16.0f;
+          dist /= 12.0f;
           if (dist > 1.0f)
             dist = 1.0f;
 
           surf.set_color(1.0f-dist,
                          1.0f-dist,
                          1.0f-dist,
-                         1.0f/(4.0f-lheight));
+                         1.0f/(1.0f-lheight));
         }
         surf.draw(x + 320, y - surf.get_height() - lheight*24  + 100);
       }

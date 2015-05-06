@@ -42,21 +42,21 @@ IsidorMain::main(int argc, char** argv)
     CL_SetupGL::init();
 
     {
-      CL_DisplayWindow window("Isidor V0.0", 800, 600);
+      CL_DisplayWindow window("Isidor V0.1", 800, 600);
 
-      IsotileLayer layer1("data/images/wtest.png");
-      IsotileLayer layer2("data/images/tilemap2.png");
-      IsotileLayer layer3("data/images/tilemap3.png");
-      IsotileLayer layer4("data/images/tilemap4.png");
-      IsowallLayer layer5("data/images/wtest2.png");
+      IsotileLayer layer1("data/maps/wtest.png");
+      IsotileLayer layer2("data/maps/tilemap2.png");
+      IsotileLayer layer3("data/maps/tilemap3.png");
+      IsotileLayer layer4("data/maps/tilemap4.png");
+      IsowallLayer layer5("data/maps/wtest2.png");
 
       while (!CL_Keyboard::get_keycode(CL_KEY_ESCAPE))
       {
         CL_Display::clear();
         layer1.draw(0);
-        layer2.draw(0);
-        layer3.draw(0);
-        layer4.draw(0);
+        //layer2.draw(0);
+        //layer3.draw(0);
+        //layer4.draw(0);
         layer5.draw();
         CL_Display::flip();
         CL_System::keep_alive();
