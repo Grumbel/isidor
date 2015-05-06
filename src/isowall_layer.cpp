@@ -17,7 +17,7 @@
 
 #include <iostream>
 #include <ClanLib/display.h>
-#include "isowall_layer.hxx"
+#include "isowall_layer.hpp"
 
 IsowallLayer::IsowallLayer(std::string filename)
   : horz("htile1.png"),

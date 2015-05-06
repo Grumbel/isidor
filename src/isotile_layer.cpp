@@ -18,7 +18,7 @@
 #include <iostream>
 #include <ClanLib/display.h>
 #include <ClanLib/core.h>
-#include "isotile_layer.hxx"
+#include "isotile_layer.hpp"
 
 IsotileLayer::IsotileLayer(std::string filename)
 {

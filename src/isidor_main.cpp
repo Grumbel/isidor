@@ -19,9 +19,9 @@
 #include <ClanLib/core.h>
 #include <ClanLib/display.h>
 #include <ClanLib/gl.h>
-#include "isotile_layer.hxx"
-#include "isowall_layer.hxx"
-#include "isidor_main.hxx"
+#include "isotile_layer.hpp"
+#include "isowall_layer.hpp"
+#include "isidor_main.hpp"
 
 IsidorMain::IsidorMain()
 {
@@ -44,15 +44,18 @@ IsidorMain::main(int argc, char** argv)
     CL_DisplayWindow window("Isidor V0.0", 800, 600);
 
     IsotileLayer layer1("wtest.png");
-    //IsotileLayer layer2("tilemap2.png");
-    //IsotileLayer layer3("tilemap3.png");
-    //IsotileLayer layer4("tilemap4.png");
+    IsotileLayer layer2("tilemap2.png");
+    IsotileLayer layer3("tilemap3.png");
+    IsotileLayer layer4("tilemap4.png");
     IsowallLayer layer5("wtest2.png");
 
     while (!CL_Keyboard::get_keycode(CL_KEY_ESCAPE))
     {
       CL_Display::clear();
       layer1.draw(0);
+      layer2.draw(0);
+      layer3.draw(0);
+      layer4.draw(0);
       layer5.draw();
       CL_Display::flip();
       CL_System::keep_alive();

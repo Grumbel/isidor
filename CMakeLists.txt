@@ -38,9 +38,9 @@ pkg_search_module(CLANDISPLAY REQUIRED clanDisplay-1.0)
 pkg_search_module(CLANSOUND REQUIRED clanSound-1.0)
 
 set(ISIDOR_SOURCES
-  src/isidor_main.cxx
-  src/isotile_layer.cxx
-  src/isowall_layer.cxx)
+  src/isidor_main.cpp
+  src/isotile_layer.cpp
+  src/isowall_layer.cpp)
 
 add_executable(isidor  ${ISIDOR_SOURCES})
 target_link_libraries(isidor PUBLIC
