@@ -20,8 +20,8 @@
 #include "isowall_layer.hpp"
 
 IsowallLayer::IsowallLayer(std::string filename)
-  : horz("htile1.png"),
-    vert("wtile1.png")
+  : horz("data/images/htile1.png"),
+    vert("data/images/wtile1.png")
 {
   std::cout << "Filename: " << filename << std::endl;
   CL_PNGProvider buffer(filename);

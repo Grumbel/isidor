@@ -26,14 +26,14 @@ IsotileLayer::IsotileLayer(std::string filename)
   CL_PNGProvider buffer(filename);
   buffer.lock();
 
-  tiles.push_back(CL_Surface("tile.png"));
-  tiles.push_back(CL_Surface("tile.png"));
-  tiles.push_back(CL_Surface("tile1.png"));
-  tiles.push_back(CL_Surface("tile2.png"));
-  tiles.push_back(CL_Surface("tile3.png"));
-  tiles.push_back(CL_Surface("tile4.png"));
-  tiles.push_back(CL_Surface("tile5.png"));
-  tiles.push_back(CL_Surface("tile5.png"));
+  tiles.push_back(CL_Surface("data/images/tile.png"));
+  tiles.push_back(CL_Surface("data/images/tile.png"));
+  tiles.push_back(CL_Surface("data/images/tile1.png"));
+  tiles.push_back(CL_Surface("data/images/tile2.png"));
+  tiles.push_back(CL_Surface("data/images/tile3.png"));
+  tiles.push_back(CL_Surface("data/images/tile4.png"));
+  tiles.push_back(CL_Surface("data/images/tile5.png"));
+  tiles.push_back(CL_Surface("data/images/tile5.png"));
 
   width  = buffer.get_width();
   height = buffer.get_height();
