@@ -1,0 +1,67 @@
+{
+  "nodes": {
+    "clanlib": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1645978295,
+        "narHash": "sha256-ZDpfaeEtVCYWXVgoX+G3WIbSHyAfc3jet4zwk/5WcqY=",
+        "owner": "grumbel",
+        "repo": "clanlib-1.0",
+        "rev": "1dd1e10f549c7c06c8017f537f446f452fc01923",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "grumbel",
+        "repo": "clanlib-1.0",
+        "type": "gitlab"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1649676176,
+        "narHash": "sha256-OWKJratjt2RW151VUlJPRALb7OU2S5s+f0vLj4o1bHM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "a4b154ebbdc88c8498a5c7b01589addc9e9cb678",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1651153234,
+        "narHash": "sha256-Inm+o6a8N7R4cY62IryHgwdO9oJgYE6ULhhS8icpNqY=",
+        "owner": "Grumbel",
+        "repo": "nixpkgs",
+        "rev": "2bd3cb67b76e404b11ee20700e2f97d716a71ec9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Grumbel",
+        "ref": "fix-guile-3.0",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "clanlib": "clanlib",
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
