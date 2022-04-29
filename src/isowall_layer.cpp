@@ -17,11 +17,13 @@
 
 #include <iostream>
 #include <ClanLib/display.h>
+
+#include "datadir.hpp"
 #include "isowall_layer.hpp"
 
 IsowallLayer::IsowallLayer(std::string filename)
-  : horz("data/images/htile1.png"),
-    vert("data/images/wtile1.png")
+  : horz(isidor::g_datadir + "/images/htile1.png"),
+    vert(isidor::g_datadir + "/images/wtile1.png")
 {
   std::cout << "Filename: " << filename << std::endl;
   CL_PNGProvider buffer(filename);
