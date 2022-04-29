@@ -53,11 +53,13 @@ IsotileLayer::IsotileLayer(std::string filename)
 int
 IsotileLayer::get_width()
 {
+  return 0; // FIXME
 }
 
 int
 IsotileLayer::get_height()
 {
+  return 0; // FIXME
 }
 
 void
