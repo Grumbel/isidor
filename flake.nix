@@ -1,10 +1,9 @@
 {
   inputs = {
-    nixpkgs.url = "github:Grumbel/nixpkgs?ref=fix-guile-3.0";
-    # nixpkgs.url = "github:nixos/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
     flake-utils.url = "github:numtide/flake-utils";
 
-    clanlib.url = "gitlab:grumbel/clanlib-1.0";
+    clanlib.url = "github:grumbel/clanlib-1.0";
     clanlib.inputs.nixpkgs.follows = "nixpkgs";
     clanlib.inputs.flake-utils.follows = "flake-utils";
   };
@@ -13,8 +12,10 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-      in rec {
-        packages = flake-utils.lib.flattenTree {
+      in {
+        packages = rec {
+          default = isidor;
+
           isidor = pkgs.stdenv.mkDerivation rec {
             pname = "isidor";
             version = "0.1";
@@ -38,10 +39,10 @@
               pkgs.makeWrapper
             ];
             buildInputs = [
-              clanlib.defaultPackage.${system}
+              clanlib.packages.${system}.default
             ];
            };
         };
-        defaultPackage = packages.isidor;
-      });
+      }
+    );
 }
