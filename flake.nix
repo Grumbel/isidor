@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils";
 
     clanlib.url = "github:grumbel/clanlib-1.0";
@@ -19,25 +19,22 @@
           isidor = pkgs.stdenv.mkDerivation rec {
             pname = "isidor";
             version = "0.1";
+
             src = nixpkgs.lib.cleanSource ./.;
+
             enableParallelBuilding = true;
+
             postPatch = ''
               substituteInPlace src/datadir.cpp \
                 --replace '"data/"' '"'"''${out}"'/share/isidor"'
             '';
-            postFixup = ''
-              for program in $out/bin/*; do \
-                wrapProgram "$program" \
-                  --prefix LIBGL_DRIVERS_PATH ":" "${pkgs.mesa.drivers}/lib/dri" \
-                  --prefix LD_LIBRARY_PATH ":" "${pkgs.mesa.drivers}/lib"; \
-              done
-            '';
-            nativeBuildInputs = [
-              pkgs.cmake
-              pkgs.swig
-              pkgs.pkg-config
-              pkgs.makeWrapper
+
+            nativeBuildInputs = with pkgs; [
+              cmake
+              swig
+              pkg-config
             ];
+
             buildInputs = [
               clanlib.packages.${system}.default
             ];
